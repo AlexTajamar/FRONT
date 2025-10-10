@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Saludo from './components/Saludo';
+import Metodos from './components/Metodos';
+import DobleNumero from './components/DobleNumero';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +13,8 @@ root.render(
     <App />
     <Saludo nombre="Paco" edad="18"/>,
     <Saludo nombre="JOSE" edad="19"/>
+    <Metodos></Metodos>
+    <DobleNumero></DobleNumero>
 </React.StrictMode>)
 
 // If you want to start measuring performance in your app, pass a function
