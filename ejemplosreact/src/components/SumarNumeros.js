@@ -1,8 +1,9 @@
 import img from "../assets/images/descargar.webp";
 import "./SumarNumeros.css";
-function SumarNumeros() {
+function SumarNumeros(props) {
   const sumarNumeros = (num1, num2) => {
-    var sum = num1 + num2;
+    //var sum = num1 + num2;
+    let sum = props.numero1 + props.numero2;
     console.log(sum);
   };
   return (
