@@ -11,7 +11,7 @@ function PadreMatematicas() {
       <h1 style={{ color: "red" }}>Saludo Padre</h1>
       {/* DESDE PROPS ENVIAMOS EL METODO AL HIJO PARA QUE PUEDA LLAMARLO */}
       <MatematicaHijo num={tripleNum}></MatematicaHijo>
-      <MatematicaHijo num={tripleNum}></MatematicaHijo>
+      <MatematicaHijo tripleNum={tripleNum}></MatematicaHijo>
       <MatematicaHijo num={tripleNum}></MatematicaHijo>
     </div>
   );

@@ -8,7 +8,7 @@ function MatematicaHijo(props) {
   return (
     <div>
       <h1 style={{ color: "blue" }}>Soy un MatematicasHijo</h1>
-      <button onClick={() => numero(3)}>PÚLSAME</button>
+      <button onClick={() => props.tripleNum(numero)}>PÚLSAME</button>
       <button onClick={() => dobleNum(6)}>pulsame 2</button>
       //EJECUTA EL METODO DEL PADRE
     </div>
