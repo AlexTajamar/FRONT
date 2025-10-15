@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class FormSimple extends Component {
   cajaNombre = React.createRef();
   peticionFormulario = (event) => {
-    event.preveentDefault();
+    event.preventDefault();
     console.log("PeticionLista");
   };
 
@@ -12,7 +12,9 @@ export default class FormSimple extends Component {
       <div>
         <h1>FormSimple</h1>
         <form onSubmit={this.peticionFormulario}>
-          <input type="text" ref={this.cajaNombre}></input>
+          <input type="text" ref={this.cajaNombre}>
+            ddddd
+          </input>
           <button> REALIZAR PETICION</button>
         </form>
       </div>
