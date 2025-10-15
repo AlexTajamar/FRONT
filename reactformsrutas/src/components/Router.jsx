@@ -6,6 +6,7 @@ export default class Router extends Component {
     return (
       <BrowserRouter>
         <Routes>
+          <Route path="/form" element="FormSimple"></Route>
           <Route path="/" element="Home"></Route>
           <Route path="/cine" element="Cine"></Route>
           <Route path="/musica" element="Musica"></Route>

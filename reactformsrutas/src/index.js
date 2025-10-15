@@ -13,6 +13,7 @@ root.render(
       <a href="/">Home </a>
       <a href="/cine"> Cine</a>
       <a href="/musica"> Musica</a>
+      <a href="/form"> Formulario</a>
     </header>
     <Router></Router>
   </React.StrictMode>
