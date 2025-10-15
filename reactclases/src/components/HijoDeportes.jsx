@@ -1,32 +1,18 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
-class HijoDeportes extends Component {
+export default class HijoDeportes extends Component {
   seleccionarFavorito = () => {
-    //CAPTURAMOS EL DEPORTE DEL PROPIO COMPONENT
-    var deporte = this.props.nombre;
-    console.log("Deporte favorito : " + deporte);
-    //REALIZAMOS LA PETICION AL PADRE
+    let deporte = this.props.nombre;
     this.props.mostrarFavorito(deporte);
   };
   render() {
     return (
       <div>
-        <h3 style={{ color: "blue" }}>Hijo Deportes : {this.props.nombre}</h3>
-        <button onClick={this.seleccionarFavorito}>Favorito</button>
-        <hr />
-        {Array.isArray(this.props.nombre) &&
-          this.props.nombre.map((nombre, index) => {
-            return (
-              <HijoDeportes
-                key={index}
-                nombre={nombre}
-                style={{ color: "green" }}
-              />
-            );
-          })}
+        <h3 style={{ color: "green" }}>Deporte: {this.props.nombre}</h3>
+        <button onClick={this.seleccionarFavorito} type="button">
+          Seleccionar Favorito
+        </button>
       </div>
     );
   }
 }
-
-export default HijoDeportes;

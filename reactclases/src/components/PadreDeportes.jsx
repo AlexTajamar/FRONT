@@ -1,40 +1,32 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import HijoDeportes from "./HijoDeportes";
 
-class PadreDeportes extends Component {
-  deportes = ["TENIS", "FUTBOL", "BASKET", "GOLF"];
+export default class PadreDeportes extends Component {
+  deportes = ["Football", "Tenis", "Padel", "Petanca"];
   state = {
     favorito: "",
   };
-
-  mostrarFavorito = (deporte) => {
+  mostrarFavorito = (deporteSeleccionado) => {
     this.setState({
-      favorito: deporte,
+      favorito: deporteSeleccionado,
     });
   };
   render() {
     return (
       <div>
-        <h1 style={{ color: " red" }}>
-          <hr />
-          Padre Deportes
-          <hr />
-          <h4 style={{ backgroundColor: "yellow" }}>
-            su deporte favorito es : {this.state.favorito}
-          </h4>
-          {this.deportes.map((deporte, index) => {
-            return (
-              <HijoDeportes
-                key={index}
-                nombre={deporte}
-                mostrarFavorito={this.mostrarFavorito}
-              ></HijoDeportes>
-            );
-          })}
-        </h1>
+        <h1 style={{ color: "red" }}>Padre Deportes</h1>
+        <hr />
+        <h2>Su deporte favorito es : {this.state.favorito}</h2>
+        {this.deportes.map((deporte, index) => {
+          return (
+            <HijoDeportes
+              mostrarFavorito={this.mostrarFavorito}
+              key={index}
+              nombre={deporte}
+            />
+          );
+        })}
       </div>
     );
   }
 }
-
-export default PadreDeportes;
