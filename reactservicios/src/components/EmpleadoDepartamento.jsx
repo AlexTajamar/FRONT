@@ -5,10 +5,11 @@ import Global from '../Global'
 
 export default class EmpleadoDepartamento extends Component {
   url = Global.urlEmpleados
-  cajaDepartamento = React.createRef()
+  urlDept = Global.urlDept
+  selectDepartamento = React.createRef()
    
 buscarEmpleados = (event) => {
- let id = this.cajaDepartamento.current.value
+ let id = this.selectDepartamento.current.value
  
 event.preventDefault()
 axios.get(this.url +"/"+ id).then(response =>{
@@ -18,9 +19,27 @@ axios.get(this.url +"/"+ id).then(response =>{
   })
 })
 
+
+
 }
+
+loadDepartamentos = () =>{
+  axios.get(this.urlDept + "webresources/departamentos").then(response =>{
+   
+this.setState({
+  departamentos :response.data
+})    
+
+  })
+}
+componentDidMount(){
+  this.loadDepartamentos()
+}
+
+
 state={
-  empleados : []
+  empleados : [],
+  departamentos : []
 }
 
   render() {
@@ -29,7 +48,13 @@ state={
         <h1>Empleados Departamentos</h1>         
         <form>
         <label htmlFor="">Indroduzca ID</label>
-        <input type="text"  ref={this.cajaDepartamento}/>
+        <select ref={this.selectDepartamento}>
+          {
+            this.state.departamentos.map((dept,index)=>{
+              return (<option key={index} value={dept.numero}>{dept.numero}</option>)
+            })
+          }
+        </select>
         <button onClick={this.buscarEmpleados}> Action</button>
 
       </form>
