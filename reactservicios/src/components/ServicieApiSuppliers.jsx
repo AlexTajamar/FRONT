@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Global from "../Global";
 export default class ServicieApiSuppliers extends Component {
   idNombre = React.createRef();
 
-  url = "https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers ";
   state = {
     suppliers: [],
     id: "",
   };
   loadSupplier = () => {
     console.log("Antes del servicio");
-    axios.get(this.url).then((response) => {
+    axios.get(Global.url1).then((response) => {
       console.log("Dentro del servicio");
       console.log(response.data);
       this.setState({
@@ -55,12 +55,12 @@ export default class ServicieApiSuppliers extends Component {
             <input type="text" ref={this.idNombre} />
             <button>Realizar peticion</button>
           </form>
-          <h1>ID es : {this.state.id}</h1>
+
         </div>
         <h3>
           {this.state.suppliers.map((supp, index) => {
             if (supp.SupplierID == this.state.id) {
-              return <div>{this.state.suppliers[index].SupplierID}</div>;
+              return <div>{this.state.suppliers[index].ContactName}</div>;
             }
           })}
         </h3>
