@@ -7,9 +7,14 @@ import ServicioApiCustomer from "./components/ServicioApiCustomer";
 import ServicioApiSupplier from "./components/ServicieApiSuppliers";
 import EmpleadoDepartamento from "./components/EmpleadoDepartamento";
 import Oficio from "./components/Oficio";
+import Departamentos from "./components/maestrodetalle/Departamentos";
+import CursosSelect from "./components/ejemplocomunicacion/CursosSelect";
+import TablaMultiplicar from "./components/TablaMultiplicar";
+import Router from "./components/Router";
+import MenuRutas from "./components/MenuRutas";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Oficio/>);
+root.render(<MenuRutas></MenuRutas>, <Router />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
