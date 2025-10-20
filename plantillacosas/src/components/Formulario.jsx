@@ -21,7 +21,7 @@ export default class Formulario extends Component {
   };
 
   render() {
-    // Hacemos la peticiomn al formulario para querdnos con los valores
+    // Hacemos la peticion al formulario para querdnos con los valores
     // E n los input hay que meter ref {Que es la referencia al objeto react der cada input}
     return (
       <div>
