@@ -10,6 +10,7 @@ import Popper from "popper.js";
 import MenuHospitales from "./components/MenuHospitales";
 import Home from "./components/Home"; // ✅ Import Home here
 import Router from "./Router";
+import CreateHospital from "./components/CreateHospital";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Router />);
