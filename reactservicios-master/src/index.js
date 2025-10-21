@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 // import ServiciosApiCustomers from './components/ServiciosApiCustomers';
 // import ServiciosApiSuppliers from './components/ServiciosApiSuppliers';
 // import EmpleadosDepartamento from './components/EmpleadosDepartamento';
 // import EmpleadosOficios from './components/EmpleadosOficios';
 // import Departamento from './components/maestrodetalle/Departamento';
 // import Cursos from './components/ejemplocomunicacion/Cursos';
-import Router from './components/Router';
-import MenuRutas from './components/MenuRutas';
+import Router from "./components/Router";
+import MenuRutas from "./components/MenuRutas";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
-    <MenuRutas/>
-    <Router/>
+    <Router />
   </div>
   // <Cursos/>
   // <Departamento/>

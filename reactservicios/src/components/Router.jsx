@@ -1,30 +1,33 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Home from "./Home";
-import TablaMultiplicar from "./TablaMultiplicar";
-import Notfound from "./Notfound";
+import React, { Component } from 'react'
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Home from './Home';
+import TablaMultiplicar from '../../../reactservicios-master/src/components/TablaMultiplicar';
+import Collatz from ".../../../reactservicios-master/src/components/Notfound
 import { useParams } from "react-router-dom";
-
-export default class AppRouter extends Component {
+export default class Router extends Component {
   render() {
-    function TablaMultiplicarElement() {
-      //ESTA FUNCION NOS SERVIRA PARA CAPTURAR LOS PARAMETROS
-      //RECIBIDOS EN UNA RUTA Y ENVIARLOS CON PROPS
-
-      var { minumero } = useParams();
-      return <TablaMultiplicar numero={minumero}></TablaMultiplicar>;
+    function TablaMultiplicarElement () {
+        // Esta funcion nos servira para capturar los paramentros
+        //Recibidos en una ruta y enviarlos con props a nuestro component
+        //voy a enviar un parametro llamado mi numero
+        let {minumero} = useParams()
+        //Devolvemos el componente tabla multiplicar con sus props
+        return <TablaMultiplicar numero={minumero}/>
     }
-    //DEVOLVEMOS EL COMPONENTE TABLA MULTIPLICAR CON SUS PROPS
-
+    function CollatzElement () {
+      let {numcollatz} = useParams()
+      return <Collatz numCollatz={numcollatz}/>
+    }
     return (
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tabla/:minumero" element={<TablaMultiplicar />} />
-          <Route path="*" element={<Notfound />} />
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/tabla/:minumero' element={<TablaMultiplicarElement/>}/>
+        <Route path='/collatz/:numcollatz' element={<CollatzElement/>}/>
+        {/* Para las rutas que no existen debemos utilizar el * y debe ser siempre la ultima ruta */}
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
       </BrowserRouter>
-    );
+    )
   }
 }
