@@ -1,0 +1,86 @@
+/* Estilos para el contenedor principal */
+.trabajadores-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Estilo para el título principal */
+.trabajadores-container h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #4a90e2;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+/* Estilo para el mensaje (la query string) */
+.trabajadores-container h2 {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-family: "Consolas", "Courier New", monospace;
+  background: #ecf0f1;
+  padding: 0.75rem;
+  border-radius: 5px;
+  word-break: break-all; /* Para que el texto no se salga si es muy largo */
+}
+
+/* Estilos de la tabla */
+.trabajadores-container table {
+  width: 100%;
+  border-collapse: collapse; /* Bordes limpios */
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px; /* Redondear esquinas de la tabla */
+  overflow: hidden; /* Para que el a border-radius funcione en <thead> */
+}
+
+/* Estilos para las celdas (headers y datos) */
+.trabajadores-container th,
+.trabajadores-container td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Encabezado de la tabla */
+.trabajadores-container thead tr {
+  background-color: #4a90e2; /* Un azul corporativo */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase; /* Mayúsculas para headers */
+  letter-spacing: 0.5px;
+}
+
+/* Cuerpo de la tabla */
+.trabajadores-container tbody tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Efecto "Zebra" para filas pares */
+.trabajadores-container tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Efecto "hover" al pasar el ratón sobre una fila */
+.trabajadores-container tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+/* Estilo para la última fila, para que no tenga borde inferior */
+.trabajadores-container tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Opcional: Dar un estilo especial a una columna, como el salario */
+.trabajadores-container td:nth-child(4) {
+  /* La 4ª columna (Salario) */
+  font-weight: 500;
+  color: #27ae60; /* Un color verde */
+}

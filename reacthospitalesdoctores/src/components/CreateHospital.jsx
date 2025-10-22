@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Global from "../Global";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default class CreateHospital extends Component {
   state = {
     mensaje: "",
+    status: false,
   };
   url = Global.apiHospitales;
   cajaId = React.createRef();
@@ -35,30 +37,38 @@ export default class CreateHospital extends Component {
       .then((response) => {
         this.setState({
           mensaje: "Hospital insertado",
+          status: true,
         });
       });
   };
   render() {
     return (
       <div>
+        {this.state.status == true && <Navigate to="/hospitales" />}
         <h1>Create Hospital</h1>
-        <form className="form form-primary">
+        <form>
           <label htmlFor="">cajaId</label>
-          <input type="text" ref={this.cajaId} />
+          <input className="form-control" type="text" ref={this.cajaId} />
           <br />
           <label htmlFor="">cajaNombre</label>
-          <input type="text" ref={this.cajaNombre} />
+          <input className="form-control" type="text" ref={this.cajaNombre} />
           <br />
           <label htmlFor="">cajaTelefono</label>
-          <input type="text" ref={this.cajaTelefono} />
+          <input className="form-control" type="text" ref={this.cajaTelefono} />
           <br />
           <label htmlFor="">cajaDireccion</label>
-          <input type="text" ref={this.cajaDireccion} />
+          <input
+            className="form-control"
+            type="text"
+            ref={this.cajaDireccion}
+          />
           <br />
           <label htmlFor="">cajaCamas</label>
-          <input type="text" ref={this.cajaCamas} />
+          <input className="form-control" type="text" ref={this.cajaCamas} />
           <br />
-          <button onClick={this.insertHospital}>Agregar</button>
+          <button className="btn btn-danger" onClick={this.insertHospital}>
+            Agregar
+          </button>
         </form>
 
         {this.state.mensaje && <h3>{this.state.mensaje}</h3>}

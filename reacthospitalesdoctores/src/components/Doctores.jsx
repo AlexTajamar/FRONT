@@ -64,7 +64,7 @@ export default class Doctores extends Component {
                   <td>
                     <button
                       onClick={() => this.buscarid(doctor.idDoctor)}
-                      style={{ color: "yellow", backgroundColor: "green" }}
+                      className="btn btn-primary"
                     >
                       Detalles
                     </button>
